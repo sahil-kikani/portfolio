@@ -31,9 +31,9 @@ function Experience() {
 
             <div className='dark:text-white text-xl m-2 text-left font-semibold'>Front End Developer</div>
             <div className='flex flex-col gap-6 justify-start items-center p-4'>
-            {data?.map((d) => {
+            {data?.map((d, i) => {
                 return(
-                    <div className='flex justify-start items-center'>
+                    <div className='flex justify-start items-center' key={i}>
                         <li className='text-lg text-left font-medium dark:text-white'>{d}</li>
                         </div>
                 )

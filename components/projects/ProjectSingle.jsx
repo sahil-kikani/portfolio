@@ -58,9 +58,9 @@ const ProjectSingle = (props) => {
               {props?.info}
             </p>
 			<div className='flex justify-center items-center gap-2'>			
-			{props?.tech?.map((t) => {
+			{props?.tech?.map((t, i) => {
 				return(
-					<Image src={t} height={32} width={36} className='p-1 bg-white rounded-lg' style={{objectFit: 'cover'}}/>
+					<Image src={t} key={i} height={32} width={36} className='p-1 bg-white rounded-lg' style={{objectFit: 'cover'}}/>
 				)
 			})}
 			{!props?.private &&

@@ -1,6 +1,6 @@
 const selectOptions = [
 	'All projects',
-	'Web Application',w
+	'Web Application',
 	'Web Tool',
 	'Admin Panel'
 ];
@@ -31,8 +31,8 @@ function ProjectsFilter({ setSelectProject }) {
 				All Projects
 			</option>
 
-			{selectOptions.map((option) => (
-				<option className="text-normal sm:text-md" key={option}>
+			{selectOptions.map((option, i) => (
+				<option className="text-normal sm:text-md" key={i}>
 					{option}
 				</option>
 			))}
