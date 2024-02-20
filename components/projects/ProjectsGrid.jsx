@@ -106,7 +106,7 @@ function ProjectsGrid() {
 				</div>
 			</div>
 
-			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-5">
+			<div className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
 				{selectProject
 					? selectProjectsByCategory.map((project, index) => {
 							return <ProjectSingle key={index} {...project} />;

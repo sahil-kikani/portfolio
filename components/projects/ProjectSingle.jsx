@@ -41,37 +41,35 @@ const ProjectSingle = (props) => {
     // 		</div>
     // 	</div>
     // </motion.div>
-    <div className='w-full  mb-4 md:mb-0'>
-      <div className='h-72 block group relative mx-2 overflow-hidden shadow-lg'>
-        <Image src={props.img} className='rounded-t-xl border-none' alt='Single Project'  fill/>
-        <div className='absolute gradient transition duration-300 group-hover:bg-black group-hover:opacity-90 w-full h-72 md:h-96 z-10'></div>
-        <div className='absolute left-0 right-0 bottom-0 p-6 z-30 transform translate-y-1/2 transition duration-300 h-[450px] group-hover:translate-y-0 delay-100'>
-          <div className='h-1/2 relative'>
-            <div className='absolute bottom-0'>
-              <h2 className='font-bold text-white leading-tight transition duration-300 text-xl pb-6 group-hover:underline'>
-			  {props.title}
-              </h2>
-            </div>
-          </div>
-          <div className='h-full'>
-            <p className='text-white text-md pb-4 opacity-0 transition duration-300 group-hover:opacity-100'>
-              {props?.info}
-            </p>
-			<div className='flex justify-center items-center gap-2'>			
-			{props?.tech?.map((t, i) => {
-				return(
-					<Image src={t} key={i} height={32} width={36} className='p-1 bg-white rounded-lg' style={{objectFit: 'cover'}}/>
-				)
-			})}
-			{!props?.private &&
-				<Link href={props.url} target='blank' className='bg-white text-black text-sm px-3 py-1 font-semibold opacity-0 transition duration-300 group-hover:opacity-100 border-2 rounded-md border-white focus:border-black focus:bg-gray-300'>
-              Visit
-            </Link>
-			}
-			            
-			</div>
-          </div>
+    //
+    <div class='w-96 bg-secondary-light dark:bg-secondary-dark shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl'>
+      <img src={props.img} alt='Product' class='object-cover rounded-t-xl aspect-video' />
+      <div class='px-4 py-3 w-96'>
+        <span class='text-gray-400 dark:text-gray-200 mr-3 uppercase text-xs'>{props?.category}</span>
+        <p class='text-lg font-bold dark:text-white text-black truncate block capitalize'>{props.title}</p>
+        <div class='flex items-center'>
+          <p class='text-lg font-medium dark:text-white text-black cursor-auto my-3'>{props.info}</p>
         </div>
+      </div>
+      <div className='flex justify-between w-full items-center gap-3 p-4'>
+        <div className='flex gap-2'>
+          {props?.tech?.map((t, i) => {
+            return (
+              <Image src={t} key={i} height={38} width={38} className='p-2 bg-ternary-dark rounded-lg' style={{ objectFit: 'cover' }} />
+            )
+          })}
+        </div>
+       
+          {!props?.private ? (
+            <Link
+              href={props.url}
+              target='blank'
+              className='text-blue-500 font-semibold text-md '
+            >
+              Visit
+            </Link> 
+          ) : <span className='dark:text-white font-semibold'>Private</span>}
+       
       </div>
     </div>
   )

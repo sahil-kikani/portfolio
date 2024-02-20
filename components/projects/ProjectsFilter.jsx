@@ -1,5 +1,4 @@
 const selectOptions = [
-	'All projects',
 	'Web Application',
 	'Web Tool',
 	'Admin Panel'
